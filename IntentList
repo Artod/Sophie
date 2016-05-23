@@ -1,0 +1,64 @@
+# This list will be a list of triples (intent keywords,intenttype,action)
+# Actions are meant to be injected into the managing Python script
+# This checking can be possibly optimized using a LALR parser, 
+# we might need code to construct a LALR FSM out of the given rules
+#
+###############################TIME INTENTS##################################
+# Referring to the past
+<NUMBER>|few year|years ago,TIME
+<NUMBER>|few day|days ago,TIME
+<NUMBER>|few month|months ago,TIME
+<NUMBER>|few hour|hours ago,TIME
+<NUMBER>|few minute|minutes ago,TIME
+<NUMBER>|few second|seconds ago,TIME
+#
+# Referring to the future
+<NUMBER>|few year|years later,TIME
+<NUMBER>|few day|days later,TIME
+<NUMBER>|few month|months later,TIME
+<NUMBER>|few hour|hours later,TIME
+<NUMBER>|few minute|minutes later,TIME
+<NUMBER>|few second|seconds later,TIME
+#  
+# End of the month/year
+month end,TIME
+year end,YEAR
+#
+# References to nearby days 
+today,TIME
+tomorrow,TIME
+yesterday,TIME
+day after tomorrow,TIME
+day before yesterday,TIME
+#
+# Day constants
+sunday,TIME
+monday,TIME
+tuesday,TIME
+wednesday,TIME
+thursday,TIME
+friday,TIME
+saturday,TIME
+#
+# User-alterable times of the day and week
+morning,TIME
+noon,TIME
+afternoon,TIME
+evening,TIME
+night,TIME
+tonight,TIME
+breakfast,TIME
+lunch,TIME
+dinner,TIME
+weekend,TIME
+#
+# Some TIME intents can be combined, for eg: Sunday morning, yesterday 
+# afternoon, day after tomorrow evening. Some can't like : evening 
+# breakfast, afternoon lunch (atleast in the time sense).
+#
+# Time based queries
+how long,TIME
+time,TIME
+# Non-time intents
+<NUMBER> time|times,FREQUENCY
+<NUMBER> time|times <NUMBER>,EXPRESSION
