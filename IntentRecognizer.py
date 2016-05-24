@@ -1,3 +1,4 @@
+# Populating intent dictionary
 intentdict = {}
 intentdictlen = 0
 def loadIntents():
@@ -9,9 +10,19 @@ def loadIntents():
 		intentdict[intenttriple[0]]=intenttriple[1]
 	intentdictlen = len(intentdict.keys())
 	
+# Helper function for pretty printing (part of UI module)
 def boldprint(str):
 	print '\033[1m'+" ".join(str)+'\033[0m',
 
+# Check if the wordlist at the current index, matches the pattern
+# Note that the pattern can consist of RE type specifications for eg: pipe(|) to specify either word
+# This matches a single pattern, we need to optimize all pattern matches to happen simultaneously
+# through the creation of a FSM/ created using a CLR parser.
+
+# The issue however is dynamic updating. Is it possible to build a CLR parser incrementally by rule?
+# It seems possible at surface - start with start state, add this rule, undergo a transition 
+# then	- if transition exists add this rule to the next state.
+#       - else create a new state bringing forward all required rules from the previous state    
 def match(wordlist, index, pattern):
 	patternwords = pattern.split(' ')
 	patternwordlength = len(patternwords)
@@ -27,6 +38,10 @@ def match(wordlist, index, pattern):
 			return 0
 	return patternwordlength
 
+# Tokenize classes of words as a common grouping, these usually do not change the meaning
+# of a sentence as much.
+# So far, we decide to tokenize date and time formats, number.
+# Everything else is understood as a keyword or intent (phrasal keyword with significant meaning)
 def tokenizer(str):
 	words = str.split(' ')
 	wordslen = len(words)
@@ -38,24 +53,32 @@ def tokenizer(str):
 			continue
 	return words
 			
+# Recognize intent phrases in the given list of words
+# This does a greedy matching (longest prefix matching)
 def intentRecognize(words):
 	wordslen = len(words)
 	temp = ""
 	i = 0
 	while(i<wordslen):
 		flag = True
+		bestlen = -1
 		for key in intentdict.keys():
 			shiftlen = match(words,i,key)
-			if(shiftlen):
-				boldprint(words[i:i+shiftlen])
-				print intentdict[key]
-				i+=(shiftlen-1)
-				flag = False
-				break
+			if(bestlen<shiftlen):
+				bestlen = shiftlen
+				bestkey = key
+				
+		if(bestlen):
+			boldprint(words[i:i+bestlen])
+			print intentdict[bestkey]
+			i+=(bestlen-1)
+			flag = False
+				
 		if(flag):
 			print words[i]
 		i+=1
-		
+
+# Driver function		
 loadIntents()
 while(1):
 	str = raw_input()
