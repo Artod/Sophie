@@ -19,17 +19,17 @@ Version 0.0 (23rd May 2015) </br>
        can help later on - think of it as a tokenizer-parser separation </br>
      - we will perhaps need the notion of a CSG </br>
 
-(24th May 2015) - Architecture Updates </br>
+(25th May 2015) - Architecture Updates </br>
 0.0.5 - Architectural Revision </br>
 0.0.6 - Resolving the parse issue with expressions in 0.0.4 </br>
 0.0.7 - Detailing further INTENTS </br>
 0.0.8 - Describing IO interface - develop basic input and output modules </br>
 
-(25th May 2015) - Modularization and Model Selection </br>
+(26th May 2015) - Modularization and Model Selection </br>
 0.0.9 - Modularize the whole pipeline as per decided architecture </br>
 0.0.10 - Selection of language generation models/ML/NLP/DM models to provide for bot building </br>
 
-Version 0.1 (26th May 2015) - First tangible product </br>
+Version 0.1 (27th May 2015) - First tangible product </br>
 0.1 - Formal revision of entire pipeline. Should be ready to use with a couple of basic bots - ContactsBot and PropertyBot. </br>
 0.1.1 - Basic Bot planning. </br>
 
