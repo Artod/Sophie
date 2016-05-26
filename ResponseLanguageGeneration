@@ -1,0 +1,64 @@
+The idea so far is to list out the states that Sophie is likely to be in, with new states added whenever a 
+transition of a given confidence does not exist. These states are expected to be make intuitive sense, so that
+we can label them later on. Or merge similar ones.
+
+So states encode the mood and experience so far Sophie has encountered in the conversation. 
+Each state has a list of training data on which a CFG/Markov Model is built, from which language generation takes place.
+
+Emotions are fixed, we can encode fixed emotions - happy, sad, anger, witty, curious, etc. - 
+best to keep 5-6 core emotions (such as FB/Portal/Slack). However, situations may vary.
+
+Assume State 0-0 encodes greeting and happy. Let's say State 0-1 encodes greeting and say angry. So initially the bot starts out
+ready to greet you in a happy mood. You give it a flip of the bird, and yeah it's pretty much going to get angry, but still
+committed to the service it started out in - i.e the greeting. Some toned-down anger like, 
+"Mind your language, sir. What can I do for you?",
+          v
+"Hold your tone! What do you need?"
+          v
+"I wish I wasn't at your service"
+Of course this grows in stages, we give each emotion a progression value, so that it doesn't seem too extreme.
+
+Let each word carry a transition probability, neutral words have a multiplying factor of 1, good have >1x, 
+bad have <1x for a particular emotion. Therefore, any sentence will produce a value for each emotion, we use these
+as probabilities to trigger the state transition. (ensures same behaviour doesn't occur all the time)
+(Also we should probably weigh previous emotions more - i.e give emotional inertia - control mood swings. It won't be
+too nice if your helper bot switches moods too quickly and impedes service now will it? But for the drama queens out there,
+yes the emotional inertia value is subject to change as it learns from you. If you trigger a lot of mood changes, the 
+emotional inertia value will drop)
+
+[Isn't a Markov chain essentially a non-deterministic CFG? Will check it out formally later.]
+
+Now the big question is how do we assign these values?
+The main advantage of the FSM approach is that we can get coherent replies within a certain context and emotion.
+However, emotion could also be modelled fuzzily, in order to avoid the massive growth in states for emotion progression.
+
+The main problem is still eluding us. How do we generate the sentences? We will of course opt for a phrase based or feature
+based approach; while providing for the simple stencil/template like approach. However the idea is that the system learns over 
+time. It reads drama/emotional stories with a given class, so that it knows how each sentence rates on an emotion scale and
+records some sentence features.
+Data therefore needs to provide text from which sentence features are evaluated, and a given class of emotion.
+This guides the development of a fuzzy logic system.
+
+Basically moods can go in many ways, this is fed into a fuzzy logic system which controls a few aspects of language generation.
+i.e the features mentioned above - expletives, rude/harsh words, short replies(for curtness), praise words and so on. 
+
+Therefore the language generation problem now becomes: [Adapted from wikipedia]
+1. Content determination - Determined from the raw response/action metadata.
+2. Response structuring - Pre-defined grammatical rules for proper sentences. (Fed as a CFG)
+3. Lexical choice - Determined from fuzzy system above
+
+Now the last issue is how does the system learn?
+Probably a better question is where can it learn?
+
+Content Determination - Metadata can have a tag which indicates what kind of context it is i.e greeting, system report, 
+standard reply etc. Each type of content can have a CFG. Nothing much we can do with regard to learning.
+Response structuring - We train a n-gram model on each content type, each gets a corpus of responses. Lot of scope for learning
+here, however where do we get such data? Do we handcraft it? If we handcraft, then is there any point of learning?
+Another approach is to write a heuristic which classifies which type of content a given text is. This is fed into the content
+type n-gram model. The issue is to find a proper dataset, although this is not nearly as difficult as the other approaches.
+Lexical choice - Fuzzy system adds to the n-gram based selection for a given content type, giving more weight for features in 
+n-grams since most features are word-based.
+
+The task is now to distill all these ideas.
+
+Response structuring? - A corpus 
