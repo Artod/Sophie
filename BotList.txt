@@ -72,3 +72,4 @@ Zomato bot - Get information about food ratings etc.
 Pattern Recognition bot - Operate upon arrays/matrices/images to find patterns, Regular expression testing
 
 More scientific/mathematical modules built on the idea of Wolphram Alpha/MATLAB
+Personality bot - Taps into the emotion a bot is feeling right now and attempts to have a conversation. If not checked, the bot can go crazy and refuse to respond. This feature can be turned off.
