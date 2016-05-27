@@ -1,0 +1,74 @@
+Program Manager - Operations (Open/Close/Search/Tag/Remove/Change Settings) on installed applications
+
+Facebook bot - Defines interactions with Facebook account
+Gmail bot - Defines interactions with Gmail account
+Calendar bot - Manages scheduling activities in association with Google Calendar
+Youtube - Defines interactions with Youtube account
+
+Calculator bot - Simple arithmetic, trigonometric and algebraic expression evaulation, clock arithmetic as well
+Solver bot - Linear, quadratic, cubic equation solvers + general polynomial solving by Newton-Raphson
+Optimization bot - Solve optimization problems by Simplex
+Linear Algebra bot - Evaluate linear algebra expressions on matrices and vectors
+Calculus bot - Evaluate integrals, solve differential equations
+GraphFlow bot - Network flow and graph related solver
+Converter bot - Convert from one unit to another
+
+Contacts bot - Manage calls, messages, emails, addresses etc of contacts
+Interacts with other bots to achieve this functionality
+
+Devices bot - Control attached devices, if they have exposed actions
+This bot is used for CD tray control, ejecting pendrives/harddrives etc.
+
+Knowledge bot - Search in knowledge graph and mine for information and answer basic queries. Also should be capable of online search.
+
+Events bot - Schedule events with times, people and places all in one.
+Finance bot - Bank account management (for now just a simple estimate)
+Flights/Trains/Hotels bot - Interact with Cleartrip to get a list of flights/hotels/trains according to given constraints. Look to interact in same web interface.
+
+Programming bot - Search for code snippets/language documentation/API documentation for possible solutions
+
+[Remember all bots learn - the command is attached to the nearest matching
+bot]
+
+File management bot - Delete/Edit/Create/Properties/Search/Tag files
+Maps bot - Find routes between places, from my location
+Places bot - Find places near me
+Media management bot - Play/Stop/FF/SD etc for music/video, define interactions with VLC, subtitle downloading, media information
+IMDB bot - Get IMDB information about a movie
+Music recognition bot - Recognize a played sample of music (just for fun)
+UMD bot - Get music information
+News bot - Pulls from Google News
+Notes bot - Write a quick note, search, view related notes, interacts with Keep
+Alarm bot - Manages alarms/notifications/reminders
+Shopping bot - Hook up with Amazon's Web interface
+Chat bot - Machine trained bot to answer a variety of queries in small talk/chatting
+Empathy bot - Machine trained bot to offer empathy in common situations
+Text Summarizer bot - Summarize a given piece of text
+Personal bot - Answer personal questions about user and bot
+Planner bot - Define mini-tasks and priority, uses information stored in database to recommend how to do a certain task
+Cab bot - Book a cab on Ola/Meru [Planning to do this via a robotic arm and dummy cellphone]
+Web search bot - Search for a given text using a search engine
+Git bot - Manage git tasks in an easier way
+Translate bot - Google Translate API for this
+BMS and TV listings - Hook up to appropriate APIs
+Web browser bot - Open a given website, tag websites for quick access, bookmark important websites, clipboard services, auto video download
+Designer bot - Designer related help bot
+Artist bot - Paint like functionality bot controlled with chat interfaces [good chance to look at some fascinating UX ideas]
+
+Face Recognition bot - Recognize faces with data stored in database, can be also used as authentication mechanism 
+Image Analysis and Processing bot - Operations on images, image analysis functionality
+Computational Geometry bot - Developed during course of my project, CG bot is used to automate certain tasks
+CUDA helper bot - Construct CUDA code easily from serial code
+Data Analysis and Visualization bot - Draw graphs and data visualizations from data, smart data recognition tools; parse PDFs etc.
+Pocket bot - Interact with Pocket to manage pocket articles, free memory from phone by saving links to articles on desktop, retrieve whenever necessary
+Weather bot - Get weather of locations
+Sentry bot - Theft/Recovery and Monitoring outside the laptop
+System Monitor bot - Reports and Alerts of System variables
+Signal Analysis bot - Analyze signals and perform operations upon them
+Remote access bot - Perform tasks remotely on a desktop/laptop from a mobile device using SMS/non-internet methods
+Joke bot - Recreation and joke finder bot
+Game bot - Text based games 
+Zomato bot - Get information about food ratings etc.
+Pattern Recognition bot - Operate upon arrays/matrices/images to find patterns, Regular expression testing
+
+More scientific/mathematical modules built on the idea of Wolphram Alpha/MATLAB
