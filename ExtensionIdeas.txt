@@ -1,0 +1,34 @@
+How do we learn in case of ambiguity? Do something like an IR system? That will be a lot of information to keep track of will slow yhe system down. 
+
+Some bots may require being placed in different parts of the pipeline. Should we instead make each section of the pipeline a bot? This will require redefining a bot. Filter bots was the inspiration for this.
+
+Sometimes there is a need to create new variables and functions. How do we name and keep track of them (both system and user)
+
+Should we instead focus on bot interaction intelligence? This part can write code by itself to improve compatibility. This will require a complicated type system, might hinder bot development.
+
+How do we smartly stop parsing? For example, Hello there! I need some <command>. How do we differentiate between sentence completion in context or out of context. Do we take a most greedy approach?
+
+How to smartly suggest a corrective parse. Send a mail to facebook could be understood two ways. Send a mail to X where we suggest X is an email/contact. Or X facebook where X is an action.
+
+If we want our system to do an action next time, how do we say this? Note either we want to edit the action or add/delete a new action where we need to check for compatibility. Or we want to edit the response. How does this work for the learning process?
+
+Emotional responses? Is probably too much to handle, let's skip.
+
+How do we handle states? Like a particular sentence drives it to a state. Should this be implemented by the bot instead.
+
+How do we teach the bot naturally? How do we edit it naturally - consider the web interface, simple by concept but runs into trouble when we deal with templates.
+
+What about synonyms and equivalent classes? 
+
+Response filling and variability?
+
+Exceptional cases.
+
+Don't worry we've got most of this figured out. We know a certain model based on the same principle works.
+
+The main concern with the system is dealing with ambiguity and growing in an incremental manner without disturbing the other components.
+
+Where does actual machine learning figure in? We want it to learn something not told directly. Is the performance increasing with more data?
+ML probs -classification/regression
+
+
