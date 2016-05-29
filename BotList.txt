@@ -55,6 +55,7 @@ Web browser bot - Open a given website, tag websites for quick access, bookmark 
 Designer bot - Designer related help bot
 Artist bot - Paint like functionality bot controlled with chat interfaces [good chance to look at some fascinating UX ideas]
 Fitness bot - Schedule and suggest jogs/exercise sessions
+Smart home bot - Hook up and control devices using Sophie
 
 Face Recognition bot - Recognize faces with data stored in database, can be also used as authentication mechanism 
 Image Analysis and Processing bot - Operations on images, image analysis functionality
