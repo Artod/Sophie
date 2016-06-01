@@ -1,0 +1,31 @@
+ID3 Approach
+-------------------------------------------------------------------------------------------------------
+# Here the examples are the conjuction of compulsory conditions
+# Once we reach the leaf, we check for all optional conditions manually
+# Attributes are count(<ENTITY>),pos(<ENTITY>),.name,.phrase etc. however it is not a perfect mapping
+
+The first question is how to be represent all attributes? - they are potentially huge
+It won't do to store the whole thing in memory.
+The reduction to ID3 is not apparent.
+
+Refined Database approach
+-------------------------------------------------------------------------------------------------------
+Instead we go for a database approach since possible queries are known.
+Number all possible actionresponses. 
+
+For each query type have a file which stores integers pointing to these actionresponses.
+Optimize the file searching for these query types.
+Optimize the queries by conjoining from the smallest pair of sets.
+Consider appending for the query files.
+Range queries can be handled by smart partitioning i.e
+Suppose till now actionresponses have only asked for count(<TIME>)<2 and nothing at all.
+Split the count(<TIME> file into two sections - <2 and >=2.
+If a new actionresponse comes along, say count(<TIME>)>6. Split >=2 into <=6 and >6.
+All this split information can be kept at the beginning for editing purposes.
+[0,2)[2,6](6,INF]
+  |     |       |
+Intvl1 Intvl2  Intvl3
+Number the actionresponses with these label - Intvl1,2,3 - helps for appending at runtime.
+During maintainence - sort it periodically.
+Containing query files can be split smartly depending on how many members they have - B+ Tree approach.
+Reducing file reading time is more important - organize file reading around that.
