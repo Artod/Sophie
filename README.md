@@ -28,7 +28,7 @@ Version 0.0 (23rd May 2016)</br>
 (3rd June 2015) - Pipeline construction </br>
 0.0.9 - Keyboard input/output on PC interface</br>
 0.0.10 - Decision tree implementation </br>
-0.0.11 - Basic bots implementation and testing
+0.0.11 - Basic bots implementation and testing </br>
 0.0.12 - Parser adaptation for new entities and intents </br>
 0.0.13 - Pipeline organization - Core Sophie code </br>
 
