@@ -35,12 +35,12 @@ class Bot:
 	actionresponses = [([conditions],response,actionfunctionpointer)] - list of tuples which contain list of 																			conditions to be matched to the 																		a response and optionally an action
 	
 	Added to the global list of actionresponses to check string against
-	How to we optimize this checking? Reducing candidates.
+	How to we optimize this checking? Decision tree or a database approach.
 	
 	
 Condition queries
 -----------------
-has <ENTITY>/<INTENT>
+has <ENTITY>/<INTENT> resolves to count()>0
 count(<ENTITY>/<INTENT>)[</>/==/!=/>=/<=]N
 <ENTITY>.name==<ENTITYNAME>
 <INTENT>.phrase==<INTENTPHRASE>
@@ -52,4 +52,5 @@ Something like a decision tree might help for fast checking.
 
 If this abstraction is not required for a bot checking, we can instead resort to <ENTITY>.name and <INTENT>.phrase checks to brute force check all the elements in the parse.
 
-Next question is how to construct the Decision tree effectively.
+Next question is how to construct the Decision tree effectively. Use a modification of the ID3 algorithm.
+Or the databases approach.
