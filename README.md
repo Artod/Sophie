@@ -1,6 +1,6 @@
 #Sophie
 
-Version 0.0 (23rd May 2015) </br>
+Version 0.0 (23rd May 2016)</br>
 0.0.1 - TIME intents added </br>
 0.0.2 - Basic intent parser with highlighting </br>
      - Parsing is slow, since we manually traverse all
@@ -19,19 +19,20 @@ Version 0.0 (23rd May 2015) </br>
        can help later on - think of it as a tokenizer-parser separation </br>
      - we will perhaps need the notion of a CSG </br>
 
-(25th May 2015) - Architecture Updates </br>
-0.0.5 - Architectural Revision </br>
-0.0.6 - Resolving the parse issue with expressions in 0.0.4 </br>
-0.0.7 - Detailing further INTENTS </br>
-0.0.8 - Describing IO interface - develop basic input and output modules </br>
+(27th May 2016) - Architecture Updates </br>
+0.0.5 - Architectural Revision-concept of superbots and bots, bot anywhere in pipeline, new flow diagrams in notebook</br>
+0.0.6 - Resolving the parse issue with expressions in 0.0.4 -longest prefix matching and multiple parses, best parses are learnt on the job - through a maintained cache.</br>
+0.0.7 - Detailing a few bots to form part of the core infrastructure.</br>
+0.0.8 - Bot API detailing </br>
 
-(26th May 2015) - Modularization and Model Selection </br>
-0.0.9 - Modularize the whole pipeline as per decided architecture </br>
-0.0.10 - Selection of language generation models/ML/NLP/DM models to provide for bot building </br>
+(3rd June 2015) - Pipeline construction </br>
+0.0.9 - Keyboard input/output on PC interface</br>
+0.0.10 - Decision tree implementation </br>
+0.0.11 - Basic bots implementation and testing
+0.0.12 - Parser adaptation for new entities and intents </br>
+0.0.13 - Pipeline organization - Core Sophie code </br>
 
-Version 0.1 (27th May 2015) - First tangible product </br>
-0.1 - Formal revision of entire pipeline. Should be ready to use with a couple of basic bots - ContactsBot and PropertyBot. </br>
-0.1.1 - Basic Bot planning. </br>
+Version 0.1 (5th June 2016) - First tangible product </br>
 
 To do</br>
 -----</br>
