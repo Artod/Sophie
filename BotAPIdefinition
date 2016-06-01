@@ -1,0 +1,55 @@
+What does the API need to provide?
+	* Editing entities
+	* Editing intents
+	* Editing intentset-actionresponse mappings
+	* Editing actions
+	* Editing responses
+	* Not restricting these to be done through a file read mechanism,
+	  not affect the implementation
+	  
+class Bot:
+	entitytoken = set()
+	intenttoken = set()
+	entities = {entityname:entitytoken}   # Dictionary of entityname mappings to groups
+										  # Classify all possible entitynames into groups
+										  # For eg: Kushagra, Rahul etc are <ENTITY_NAME>
+										  # Sophie uses this dictionary to populate its global
+										  # list of entities
+	
+	intents = {intentphrase:intenttoken}  # Dictionary of intent phrase mappings to groups
+										  # Classify all possible intentnames into groups
+										  # For eg: next day, yesterday are <INTENT_TIMEDURATION>
+										  # Sophie uses this dictionary to populate its global
+										  # list of intents
+										  
+	# Entities and Intents are parsed together and a list of possible parsings is given back
+	# The difference is, entities are meant to be manipulated with (i.e they can be used as a template)
+	# however intents cannot. Both can be specified using a RE like grammar. Later, we should be able
+	# to do a CFG/CSG like grammar.
+	
+	# Internal representation of entities and intents are through a constructed SLR parser.
+	# So all we need are the dictionaries.
+	
+	actionfunctions = set()
+	responses = set([])   //set of list of responses
+	actionresponses = [([conditions],response,actionfunctionpointer)] - list of tuples which contain list of 																			conditions to be matched to the 																		a response and optionally an action
+	
+	Added to the global list of actionresponses to check string against
+	How to we optimize this checking? Reducing candidates.
+	
+	
+Condition queries
+-----------------
+has <ENTITY>/<INTENT>
+count(<ENTITY>/<INTENT>)[</>/==/!=/>=/<=]N
+<ENTITY>.name==<ENTITYNAME>
+<INTENT>.phrase==<INTENTPHRASE>
+pos(<ENTITY>/<INTENT>)[</>/==/!=/>=/<=]N
+len(<PARSED>)[</>/==/!=/>=/<=]N
+
+Conditions may be compulsory or optional.
+Something like a decision tree might help for fast checking.
+
+If this abstraction is not required for a bot checking, we can instead resort to <ENTITY>.name and <INTENT>.phrase checks to brute force check all the elements in the parse.
+
+Next question is how to construct the Decision tree effectively.
