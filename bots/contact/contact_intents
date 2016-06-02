@@ -1,0 +1,15 @@
+address <CONTACT_ADDRESS>,CONTACT#ADDRESS
+stay at <CONTACT_ADDRESS>,CONTACT#ADDRESS
+live at <CONTACT_ADDRESS>,CONTACT#ADDRESS
+phone number <CONTACT_NUMBER>,CONTACT#NUMBER
+number <CONTACT_NUMBER>,CONTACT#NUMBER
+# CallBot will have the same grammar, however action will be resolved through context
+# These are usually used in context of mail/sms when someone sends this to you
+call <NAME> on <CONTACT_NUMBER>,CONTACT#NUMBER
+call <PRONOUN> on <CONTACT_NUMBER>,CONTACT#NUMBER
+call on <CONTACT_NUMBER>,CONTACT#NUMBER
+<CONTACT_AGE> years old,CONTACT#AGE
+<CONTACT_AGE> old,CONTACT#AGE
+# For statements like "She's 19", understood only in some context
+# This makes it apparent that we need a context stack with lifetimes.
+<CONTACT_AGE>,CONTACT#AGE

@@ -1,0 +1,20 @@
+# This list is updated whenever you to define a new action
+# relevant to the ContactBot.
+
+# Add a contact with given details to your contacts.
+# Does an internal check for similar contacts, to avoid duplication.
+# Suggests a merge if possible.
+contact.add()
+
+# Delete a contact best matching the given details to your contacts.
+contact.delete()
+
+# Edit a contact best matching the given details with provided details
+# Allow for new attributes to be added
+contact.edit()
+
+# Search for a contact best matching the given details
+contact.search()
+
+# Get the value of an attribute for a given contact
+contact.get_attribute()
