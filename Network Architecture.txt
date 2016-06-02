@@ -1,0 +1,26 @@
+We introduce three concepts:
+
+Sophie Client - Any device which implements an input/output mechanism defined by Sophie and is a first point of contact between a user and the Sophie system.
+
+Sophie Server - Any device which accepts multiple connections from Sophie clients, schedules these queries to be sent for processing by bots. It maintains a tracking list (list of network addresses for various bots configured on this server) for dispatching of the queries. The server may also maintain information to inform its decision on handling requests to the bots. It may implement resource-heavy operations not supported by the client (such as voice recognition) or even caching services. 
+
+Sophie LumpServer - Any device which implements one or more bots along with other core bots required for its functionality, lumped (i.e the components of the bots are combined together into a single set of data structures meant for answering queries)
+
+This hierarchy allows us to execute Sophie in a distributed manner, and in any level of granularity required (i.e on low-power RPis for home automation or even mobile devices), as long as we can support a connection between the devices.
+
+Note that the way we have defined the concepts allows for various configurations of the client, server and lump server. For example,
+
+1. Single device (powerful workstation) used as client, server and lumpservers
+2. Single device (powerful server) used as server and lumpserver, multiple devices (PC/mobile/embedded) connect to it.
+3. 3-layered architecture : one layer of lumpservers implementing various functionality, one layer of full servers which subscribe to only the features they require, one layer of clients which connect to the full servers nearest to them.
+
+Clearly, there is a great deal of customization in the way a Sophie system can be deployed.
+Theoretically, this architecture also allows to leverage the power of GPU, by configuring multiple lumpservers on the GPU. However, lot of bots are expected to make use of file operations to achieve their functionality. This can defeat the purpose of using a GPU, with a thread running each bot.
+
+Lump servers allow us to partition functionality into separate spaces for performance/modularity reasons.
+However, partitioning will need a lot of context/user related information to be saved on the servers. We need to implement the server code to restrict how much information is stored for a particular user.
+
+Full servers keep backup of user and context information to provide a consistent Sophie experience. If a new full server is used, it contacts the previous full server to transfer the information required.
+
+Clients keep a record of which full servers they have subscribed to.
+A full server tracks that a client is not getting access to a lump server the client has not subscribed to.
