@@ -1,0 +1,4 @@
+call <NAME> - callbot
+call <NUMBER> - callbot
+book table <NUMBER> <TIME> <DATE> - bookbot
+book cab <NUMBER> <DATE> <PLACE> - bookbot
