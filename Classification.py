@@ -3,7 +3,7 @@ bots = set()
 dataset = {}
 
 # Read from training file
-file = open("Examples")
+file = open("ClassificationExamples")
 for line in file:
     l = line.strip().split(' ')
     dataset[tuple(l[:-2])]=l[-1]
