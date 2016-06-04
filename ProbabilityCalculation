@@ -1,0 +1,9 @@
+Each bot specifies an entity list or can borrow from another entity list.
+This entity lists are referred by the following format <ENTITY> which is expected to be a binary file for quick searching.
+So when calculating the probabilities for classification, we always reduce to the root word to overestimate the probability of bot
+selection. Say we defined a type <SURNAME> for a bot, which derives from <NAME>, we count it as <NAME> only. All entities defined under <SURNAME> are then counted to calculate probability of <NAME> usage by that bot.
+Now while parsing an input, suppose we encounter a word, we maintain information about it; with regard to which types it can be.
+This is conjoined with the how many bots refer it, to calculate the net probability.
+
+So entities are stored separately in a list and are referred only to calculate their type usages.
+Intents are the ones actually used to calculate main classification probabilities. 
