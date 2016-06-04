@@ -1,0 +1,36 @@
+# Simple queries
+What time is it?
+What is your name?
+What is my name?
+How old are you?
+What day is it today?
+
+# Entity recognition - Dates and Times
+Wake me up at 12 pm.
+# 	Noon/midnight
+Wake me up at noon. 
+#	Morning/Evening/Night/Afternoon - learned timings
+Wake me up in the morning.
+#	Associative timings - Here, Sophie should prompt for breakfast timing and associate it for later use
+Wake me up for breakfast.
+#	Tomorrow/today/day after tomorrow/day before yesterday
+Call him tomorrow.
+#	Same applies for week/weekend
+Remind me to pay bills at the end of the month.
+Remind me to pay bills this month end.
+
+# Property queries on knowledge objects
+#	What is X's Y?
+What is Parvathy's age?
+#	Similarities and differences - easy and difficult queries (how do we handle them)
+What's the difference between butter and cheese?
+What do butter and cheese have in common?
+What's the difference between hole1.txt and hole2.txt?
+
+
+#Basic intent recognition
+Will be hotter than 40 degrees in Chennai tomorrow after 12 pm?
+When does the train from Hyderabad to Chennai leave today?
+
+#Indirect queries
+Do I need an umbrella tomorrow?
