@@ -1,0 +1,25 @@
+Add <CONTACT_NAME>,%CONTACT_ADD_CONTACT%
+Add <CONTACT_NAME> to [my] contacts,%CONTACT_ADD_CONTACT%
+<CONTACT_NAME> is <CONTACT_AGE> years old,%CONTACT_NAME_AGE%
+<CONTACT_AGE> years old,%CONTACT_AGE%
+<CONTACT_NAME> birthday (is on)|as <CONTACT_DOB>,%CONTACT_NAME_BIRTHDAY%
+birthday (is on)|as <CONTACT_DOB>,%CONTACT_BIRTHDAY%
+born on <CONTACT_DOB>,%CONTACT_DOB%
+<CONTACT_NAME> [phone] number is|as <CONTACT_NUMBER>,%CONTACT_NAME_NUMBER%
+number is|as <CONTACT_NUMBER>,%CONTACT_NUMBER%
+<CONTACT_NAME> email is|as <CONTACT_EMAIL_ID>,%CONTACT_NAME_EMAIL%
+email is <CONTACT_EMAILID>,%CONTACT_EMAIL%
+
+# () grouping [] optional | or <> entity
+# Use cases:
+# Add Mary to contacts - Added her to your contacts
+# Add Susan - Adder her to your contacts
+# Randy['s] number is 9872492833 - (Not a question) Added his number successfully. | You don't have a contact named Randy, adding him to 
+
+your contacts | You have a contact named Randy already, should I attempt to merge? | You have three contacts named Randy, who are you 
+
+talking about?
+# Randy['s] number is 9872492833? - (question) No it's not | Yes it is
+# Store Jake's email as 15th August - (store/save) Have saved it. You saved it earlier as 12th August, should I change?
+# What is Mary's phone number - (question/what) It is 7745623888
+# Is Mary's phone number - (ill formed query) no answer
