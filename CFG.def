@@ -1,0 +1,6 @@
+<expr>:<term> + <expr>
+<expr>:<term> * <expr>
+<expr>:( <expr> )
+<term>:<id>
+<id>:<dig> <id>|<dig>
+<dig>:0|1|2|3|4|5|6|7|8|9
