@@ -40,3 +40,19 @@ class Screen:
 def main():
     screen = Screen()
     screen.eventloop()
+# IO elements
+# Label - Text printing
+# Textbox - User can enter into this
+# Passbox - Password box
+# Listbox - Choose from list of options, add extra options
+# Checkbox - Choose one or more options from a list of options
+# Graph - Plot simple 2D Graphs
+# Button - Pressable button
+# Panel - Arrange widgets and address them in a hierarchical fashion
+# Table - Print in a well formatted table
+# Screen - Describe the state of the screen currently
+
+# Basically ncurses updates the screen whenever a state changed event occurs on any of the children widgets
+# and it is passed upwards and reaches screen
+# It does not unnecessarily update everything
+# We need to think of someway of implementing callbacks
