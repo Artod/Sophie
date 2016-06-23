@@ -1,0 +1,128 @@
+#
+# Subs on offer, with alternate names for subs
+#
+special,Type of Sub,SOD
+sub of day,Type of Sub,SOD
+sub of the day,Type of Sub,SOD
+italian bmt,Type of Sub
+bmt,Type of Sub,Italian BMT
+roasted chicken,Type of Sub
+corn peas,Type of Sub
+mexican patty,Type of Sub
+chicken ham,Type of Sub
+chicken tikka,Type of Sub
+tikka,Type of Sub,chicken tikka
+ham,Type of Sub,chicken ham
+mexican,Type of Sub,mexican patty
+strips,Type of Sub,chicken strips
+#
+# Time for delivery
+#
+<NUMBER> pm,Time to deliver
+<NUMBER> am,Time to deliver
+in <NUMBER> hours,Time to deliver
+#
+# Day to deliver
+#
+tomorrow,Day to deliver
+today,Day to deliver
+monday,Day to deliver
+tuesday,Day to deliver
+wednesday,Day to deliver
+thursday,Day to deliver
+friday,Day to deliver
+saturday,Day to deliver
+sunday,Day to deliver
+#
+# Greetings
+#
+get sub,Intent to order a sub
+get a sub,Intent to order a sub
+hi,Greeting
+hello,Greeting
+hey,Greeting
+#
+# Intention to order
+#
+buy|grab|get|order a few sub|subs,Intent to order
+buy|grab|get|order a|few sub|subs,Intent to order
+buy|grab|get|order sub|subs,Intent to order
+need sub,Intent to order
+need a sub,Intent to order
+would like,General intent
+like to order,Intent to order
+would like to order,Intent to order
+order,Intent to order
+want to order,Intent to order
+place a|an order,Intent to order
+#
+# Sauces
+#
+honey mustard,Type of Sauce
+mint mayonnaise,Type of Sauce
+harissa,Type of Sauce
+mayonnaise,Type of Sauce
+mint,Type of Sauce,mint mayonnaise
+honey tamarind,Type of Sauce
+tamarind,Type of Sauce
+#
+#Vegetables
+#
+tomato|tomatoes,Tomato
+onion|onions,Onion
+lettuce,Lettuce
+cabbage,Incorrect_Term_Cabbage
+olives|olive,Olive
+halapenos|jalapenos|halapeno|jalapeno,Jalapeno
+gherkins|pickle|pickles|gherkin,Pickle
+#
+# Breads
+#
+garlic,Type of Bread,roasted garlic
+roasted garlic,Type of Bread
+parmesan oregano,Type of Bread
+oregano,Type of Bread,parmesan oregano
+honey oat,Type of Bread
+#
+# Size
+#
+6 inch,Size of sub
+small,Size of sub,6-inch
+large,Size of sub,12-inch
+12 inch,Size of sub,12-inch
+footlong,Size of sub,12-inch
+half,Size of sub,6-inch
+full,Size of sub,12-inch
+#
+# Queries
+#
+sub,Sub Context
+vegetable|veggies|vegs|vegetables|veggie,Vegetable Context
+sauce|sauces,Sauce Context
+bread|breads, Bread Context
+(what) sauce|sauces,Sauce Context
+(what) bread|breads,Bread Context
+available,Availability Query
+are there,Availability Query
+do you have,Availability Query
+how much,Quantity Query
+cost,Cost Context
+what,General Query Intent
+have i added,Added Query
+have you added,Added Query
+#
+#Modification
+#
+extra meat,Double Meat Modifier
+extra cheese,Double Cheese Modifier
+double cheese,Double Cheese Modifier
+double meat,Double Meat Modifier
+add,Add Modifier
+add extra,Extra Modifier
+add some,Add Modifier
+more,Extra Modifier
+lots of,Extra Modifier
+extra,Extra Modifier
+skip|remove|delete,Remove Modifier
+leave out,Remove Modifier
+do not add,Remove Modifier
