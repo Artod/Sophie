@@ -2,13 +2,17 @@
 intentdict = {}
 intentdictlen = 0
 def loadIntents():
+	global intentdict,intentdictlen
+	intentdict = {}
 	file = open("IntentList","r")
 	for line in file:
-		if(line[0]=='#'):
+		if(line[0] in '# \n'):
 			continue
 		intenttriple = line.strip().split(',')
 		intentdict[intenttriple[0]]=intenttriple[1]
 	intentdictlen = len(intentdict.keys())
+	file.close()
+	print intentdictlen
 	
 # Helper function for pretty printing (part of UI module)
 def boldprint(str):
@@ -62,6 +66,7 @@ def intentRecognize(words):
 	while(i<wordslen):
 		flag = True
 		bestlen = -1
+		bestkey=""
 		for key in intentdict.keys():
 			shiftlen = match(words,i,key)
 			if(bestlen<shiftlen):
@@ -79,10 +84,11 @@ def intentRecognize(words):
 		i+=1
 
 # Driver function		
-loadIntents()
 while(1):
+	print ""
 	str = raw_input()
+	loadIntents()
 	if(str!="quit"):
-		intentRecognize(tokenizer(str))
+		intentRecognize(tokenizer(str.lower()))
 	else:
 		break
